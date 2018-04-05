@@ -10,12 +10,12 @@ def J(X):
         result+= 100*(X[i+1] - X[i]**2)**2 + (1 - X[i])**2
     return result
 
-X = np.random.rand(20) #random values from 0 to 20
-T0 = 0.5
+X = np.random.rand(20)*20 -10 #random values from -10 to 10
+T0 = 50.0
 x = X
 j = J(x)
 N = 100000
-eps = 0.005
+eps = 0.05
 K_max = 15
 k = 1
 
@@ -26,8 +26,7 @@ j_min = j
 while(not fim):
     T = T0/math.log(1+k, 2)
     for i in range(N):
-        R = np.random.rand()*2 -1
-        x_c = [xi + eps*R for xi in x]
+        x_c = [round(xi + eps*(np.random.rand()*2 -1), 3) for xi in x]
         j_c = J(x_c)
         deltaJ = j_c - j
 
@@ -38,7 +37,6 @@ while(not fim):
             j = J(x_c)
 
         if j < j_min:
-            print(j)
             j_min = j
             x_min = x
 
