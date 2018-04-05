@@ -19,14 +19,15 @@ def D(t):
 
 x_axis = np.arange(-1, 11)
 y_axis = [D(t) for t in x_axis]
-
+print([(t, round(D(t),3)) for t in x_axis])
 fig = plt.figure(figsize=(8,4))
 
 plt.xlabel("t")
 plt.xlim((-2, 11))
 plt.xticks(np.arange(-1, 11))
 plt.ylabel("D(t)")
+#plt.yticks(y_axis)
 plt.plot(x_axis, y_axis, 'ro')
-plt.show()
+#plt.show()
 
-fig.savefig('lista3-q1a.pdf', dpi=100)
+#fig.savefig('lista3-q1a2.pdf', dpi=100)
