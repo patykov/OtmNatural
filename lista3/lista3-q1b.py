@@ -7,12 +7,13 @@ Y = [3.0, 3.4]
 T = 50.0#0.1 #1.0
 
 p_ = [] #matriz p nao normalizada
-for yi in Y:
+for y1 in Y:
     line = []
     for xi in X:
         dist = pow(xi-yi, 2)
         line.append(pow(np.e, -dist/T))
     p_.append(line)
+
 p_ = np.array(p_)
 print("Matrix nao normalizada:")
 print(p_)
