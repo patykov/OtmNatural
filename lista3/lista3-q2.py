@@ -16,7 +16,7 @@ x = X
 j = J(x)
 N = 100000
 eps = 0.005
-K_max = 15
+K_max = 10
 k = 1
 
 fim = False
@@ -40,8 +40,8 @@ while(not fim):
             j_min = j
             x_min = x
 
-        k +=1
-        if k > K_max:
-            fim = True
+    k +=1
+    if k > K_max:
+        fim = True
 
 print('xMin: {}, jMin: {} \n'.format(x_min, j_min))
